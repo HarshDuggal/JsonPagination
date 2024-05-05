@@ -26,6 +26,5 @@ struct DetailView: View, Equatable {
             CachedImageView(imageURL: URL(string: "https://via.placeholder.com/600/92c952")!)
         }
         .padding()
-        .multilineTextAlignment(TextAlignment.leading)
     }
 }

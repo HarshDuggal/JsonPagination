@@ -34,12 +34,12 @@ struct CachedImageView: View {
                 self.imageData = cachedData
                 return
             }
-        DispatchQueue.global().async {
+        DispatchQueue.global().async { // fetch image from server
             do {
-                let data = try Data(contentsOf: url)
+                let data = try Data(contentsOf: url) //data loaded from the url
                 print("fetchImageData from url")
 
-                DispatchQueue.main.async {
+                DispatchQueue.main.async {// update view on main thread
                     self.imageData = data
                     // Save the image data to cache
                     saveImageDataToCache(data, forKey: url.absoluteString)
@@ -71,16 +71,16 @@ struct CachedImageView: View {
             return
         }
         // Write the image data to the file URL
-        do {
+        do {//success
             try data.write(to: fileURL)
             print("Image data saved to cache successfully")
-        } catch {
+        } catch {//fail
             print("Failed to write image data to cache: \(error)")
             print("Error saving image data to cache:", error.localizedDescription)
         }
     }
     
-    // Get Image from cache
+    // Get Image from cache if already loaded
     private func getCachedImageData(forKey key: String) -> Data? {
            // Generate a hash from the key (URL)
            let hashedKey = key.hashValue.description

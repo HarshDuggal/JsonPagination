@@ -62,8 +62,8 @@ struct PostListView: View {
             return // Not enough data to calculate time difference
         }
         
-        let currentIndex = displayTimes.count - 1
-        let previousIndex = currentIndex - 1
+        let currentIndex = displayTimes.count - 1 //last time logged index
+        let previousIndex = currentIndex - 1 //second last time logged index
         
         let currentTime = displayTimes[currentIndex]
         let previousTime = displayTimes[previousIndex]
