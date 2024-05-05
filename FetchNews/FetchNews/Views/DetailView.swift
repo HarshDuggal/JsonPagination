@@ -29,9 +29,3 @@ struct DetailView: View, Equatable {
         .multilineTextAlignment(TextAlignment.leading)
     }
 }
-
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailView()
-//    }
-//}

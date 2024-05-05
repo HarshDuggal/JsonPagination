@@ -73,9 +73,3 @@ struct PostListView: View {
     }
 
 }
-//
-//struct PostListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PostListView()
-//    }
-//}
